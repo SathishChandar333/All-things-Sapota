@@ -21,4 +21,15 @@ most_profitable_day:  Monday
 
 least_profitable_day:  Thursday
 
+## Section 2:  3-day average of the daily gross profit
+
+To view the solutions, run the following command in your terminal or command prompt:
+
+```bash
+python3 section_2.py
+```
+
+### Output
+
+<img width="600" alt="image" src="https://github.com/SathishChandar333/All-things-Sapota/assets/149856099/ab202721-ac9d-4e69-a807-10c4981bca9a">
 
