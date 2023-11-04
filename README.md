@@ -12,8 +12,13 @@ python3 section_1.py
 
 ### Output
 overall_gross_margin:  30.433127538299797
+
 most_profitable_vendor:  Vendor7
+
 least_profitable_customer:  Customer9
+
 most_profitable_day:  Monday
+
 least_profitable_day:  Thursday
+
 
