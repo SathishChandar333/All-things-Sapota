@@ -26,7 +26,7 @@ least_profitable_day:  Thursday
 To view the solutions, run the following command in your terminal or command prompt:
 
 ```bash
-python3 section_2.py
+python3 3_day_avg_gross_profit.py
 ```
 
 ### Output
