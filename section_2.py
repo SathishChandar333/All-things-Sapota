@@ -4,23 +4,22 @@ import matplotlib.pyplot as plt
 # Load the data
 data = pd.read_csv("./sales_data_2.csv")
 
-# Calculate daily gross profit
-data['Daily Gross Profit'] = (data['Selling price'] - data['Buying price']) * data['Quantity sold']
+# Task 4: Calculate percentiles for buying and selling prices
+buying_price_percentiles = data['Buying price'].quantile([0.25, 0.5, 0.75])
+selling_price_percentiles = data['Selling price'].quantile([0.25, 0.5, 0.75])
 
-# Calculate 3-day rolling average of daily gross profit
-data['3-Day Avg Gross Profit'] = data['Daily Gross Profit'].rolling(window=3).mean()
+# Print percentiles for buying and selling prices
+print("\nBuying Price Percentiles")
+print(buying_price_percentiles)
+print("\nSelling Price Percentiles")
+print(selling_price_percentiles)
 
-# Print the 3-day average of daily gross profit
-print("3-Day Average of Daily Gross Profit:")
-print(data['3-Day Avg Gross Profit'].dropna())
+# Task 5: Analyze Sapota's prices falling below 25th percentile or above 75th percentile
+sapota_below_25th = data[data['Selling price'] < selling_price_percentiles[0.25]]
+sapota_above_75th = data[data['Selling price'] > selling_price_percentiles[0.75]]
 
-# Plot 3-day average gross profit
-plt.figure(figsize=(12, 6))
-plt.plot(data['Date'], data['3-Day Avg Gross Profit'], marker='o', linestyle='-', color='b')
-plt.title('3-Day Average Gross Profit Trend')
-plt.xlabel('Date')
-plt.ylabel('3-Day Avg Gross Profit')
-plt.grid(True)
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
+# Print results for Sapota's prices falling below 25th percentile or above 75th percentile
+print("\nSapota's Prices Below 25th Percentile \n")
+print(sapota_below_25th[['Date', 'Selling price']])
+print("\nSapota's Prices Above 75th Percentile \n")
+print(sapota_above_75th[['Date', 'Selling price']])
